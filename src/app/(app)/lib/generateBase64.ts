@@ -13,6 +13,6 @@ export default async function getBase64(image: string) {
     const { base64 } = await getPlaiceholder(buffer);
     return base64;
   } catch (err) {
-    throw new Error();
+    throw new Error(`Error generating base64 from image, ${err}`);
   }
 }
