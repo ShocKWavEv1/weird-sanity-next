@@ -1,5 +1,5 @@
 import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
-import { Category, Products, Sales } from "../../../sanity.types";
+import { Category, Products } from "../../../sanity.types";
 import { getAllCategories } from "@/sanity/lib/categories/getAllCategories";
 import Image from "next/image";
 import { imageBuilder } from "./lib/sanityImageBuilder";
