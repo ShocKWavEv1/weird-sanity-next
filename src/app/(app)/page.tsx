@@ -14,24 +14,35 @@ export default async function Home() {
   console.log("PRODUCTS NEXT", categories, sales);
 
   return (
-    <div className="flex flex-wrap items-center justify-center min-h-screen py-[40px] gap-[80px]">
+    <div className="flex flex-wrap items-center justify-center min-h-screen py-[80px] gap-[80px]">
       {Array.from({ length: 15 }).map((_, i) => (
         <div
           key={i + 1}
-          className="flex flex-col items-center justify-center gap-[10px]"
+          className="flex flex-col items-center justify-center gap-[20px]"
         >
           {products[0]?.productImage && (
-            <Image
-              src={products[0]?.productImage.url}
-              alt="Product Image"
-              placeholder="blur"
-              blurDataURL={products[0]?.productImage.base64}
-              width={380}
-              height={380}
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
+            <div className="w-full">
+              <Image
+                src={products[0]?.productImage.url}
+                alt="Product Image"
+                placeholder="blur"
+                blurDataURL={products[0]?.productImage.base64}
+                width={380}
+                height={380}
+              />
+            </div>
           )}
-          {products[0]?.name}
+          <div className="w-full flex flex-col items-start justify-center gap-[5px]">
+            <h1 className="text-2xl font-normal text-slate-900">
+              {products[0]?.name}
+            </h1>
+            <p className="text-md font-normal text-slate-900">
+              Price: ${products[0]?.price?.toLocaleString()}
+            </p>
+            <p className="text-md font-normal text-slate-900">
+              Stock: {products[0]?.stock}
+            </p>
+          </div>
         </div>
       ))}
     </div>
