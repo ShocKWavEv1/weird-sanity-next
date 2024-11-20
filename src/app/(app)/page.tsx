@@ -21,7 +21,7 @@ export default async function Home() {
           className="flex flex-col items-center justify-center gap-[20px]"
         >
           {products[0]?.productImage && (
-            <div className="aspect-w-1 aspect-h-1 w-[380px] h-[380px]">
+            <div className="w-full aspect-video">
               <Image
                 src={products[0]?.productImage.url}
                 alt="Product Image"
@@ -30,7 +30,7 @@ export default async function Home() {
                 width={380}
                 height={380}
                 objectFit="cover"
-                className="w-full h-full object-cover"
+                className="w-full aspect-video"
               />
             </div>
           )}
